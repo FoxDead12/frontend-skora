@@ -1,0 +1,236 @@
+.container {
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+
+.back {
+
+    z-index: 60;
+}
+
+.form {
+
+    position: relative;
+    background-color: var(--collor-2);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.form > h1 {
+
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.form > p {
+
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+}
+
+.inputsContainer {
+
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputsContainer .row {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.inputsContainer input {
+
+    width: 48%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: var(--collor-3);
+}
+
+.inputsContainer input::placeholder {
+
+    color: var(--collor-1);
+    opacity: 1;
+}
+
+.fileContainer {
+
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileContainer label {
+
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: var(--collor-3);
+    color: black;
+    user-select: none;
+}
+
+.fileContainer label.void {
+
+    color: var(--collor-1);
+    
+}
+
+
+.selectContainer {
+
+    position: relative;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectContainer label {
+
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: var(--collor-3);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.selectContainer label.void {
+
+    color: var(--collor-1);
+}
+
+.dropdown {
+
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    list-style: none;
+    left: 0px;
+    top: 2rem;
+    background-color: var(--collor-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0rem;
+    padding: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    transition: .2s all ease-in-out;
+
+}
+
+.dropdown.open {
+
+    height: 140px;
+    transition: .2s all ease-in-out;
+}
+
+.dropdown li {
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--collor-1);
+}
+
+.dropdown li:hover {
+
+    background-color: var(--collor-2);
+    color: white;
+}
+
+
+.arrow {
+    transition: .2s all ease-in-out;
+}
+
+.arrow.open {
+
+    transform: rotateZ(180deg);
+    transition: .2s all ease-in-out;
+}
+
+
+.descriptionContainer {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.descriptionContainer textarea {
+
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--collor-3);
+    border-radius: 5px;
+    resize: none;
+}
+
+.descriptionContainer textarea::placeholder {
+
+    color: var(--collor-1);
+    opacity: 1;
+}
+
+.button {
+
+    margin: 10px;
+    padding: 1rem;
+
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    background-color: var(--collor-1);
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+
+.button label {
+
+    pointer-events: none;
+}
+
+
+.closeBtn {
+
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
