@@ -16,7 +16,7 @@ export default function About(props: IAbout) {
 
         <div className={"container3"}>
             <h1>{props.language?.about?.title}</h1>
-            <p>{props.language?.about?.description}</p>
+            {/* <p>{props.language?.about?.description}</p> */}
         
             <div className={"infoContainer"}>
 
