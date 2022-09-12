@@ -29,6 +29,8 @@ export default function Header(props: IHeader) {
         <header className={"container2"}>
 
             <div className={"lefContainer"}>
+
+                <img src={"/logoSkora.png"} width={40} height={40} style={{marginRight: 10}} />
                 <CheckBox defaultChecked={props.defaultChecked} onCheckedChanged={onCheckedChanged}/>
             </div>
             
