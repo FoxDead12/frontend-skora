@@ -32,5 +32,24 @@ export interface ILanguage {
             application: string,
             description: string,
         }
+    },
+    footer: {
+
+        meetUs: {
+            title: string,
+            instaPersonal: string,
+            instaShop: string,
+            linkePersonal: string,
+            etsyStore: string
+        },
+        contactUs: {
+            title: string,
+        },
+        madeBy: {
+            title: string,
+            gitHubDev: string,
+            likeDev: string
+        },
+
     }
 }

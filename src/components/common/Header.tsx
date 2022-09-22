@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react"
-import Instagram from "../../assets/images/instagram.png";
-import Linkdin from "../../assets/images/linkdin.png"
+import Instagram from "../../assets/svgs/insta.svg";
+import Linkdin from "../../assets/svgs/linke.svg"
 import "../../css/components/common/Header.css";
 import CheckBox from "../utils/CheckBox";
 
@@ -66,7 +66,7 @@ export default function Header(props: IHeader) {
                 
                             }
                         }} 
-                        src={Linkdin} width={35} height={35} />
+                        src={Linkdin} width={40} height={40} />
                 </a>
 
                 <a href="https://www.instagram.com/skora3d_prints/" target={"_blank"} rel={"noreferrer"}>
@@ -80,8 +80,24 @@ export default function Header(props: IHeader) {
                 
                             }
                         }} 
-                        src={Instagram} width={35} height={35} />
+                        src={Instagram} width={40} height={40} />
                 </a>
+
+                <a href="https://www.instagram.com/skora3d_prints/" target={"_blank"} rel={"noreferrer"}>
+                    <motion.img
+                        initial={{scale: 0, rotateZ: -90}} 
+                        animate={{
+                            scale: 1,
+                            rotateZ: 0,
+                            transition: {
+                                delay: 2,
+                
+                            }
+                        }} 
+                        src={Instagram} width={40} height={40} />
+                </a>
+
+                
             </div>
 
         </motion.header>

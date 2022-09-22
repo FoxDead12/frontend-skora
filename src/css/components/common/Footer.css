@@ -34,6 +34,26 @@ footer > .list-container {
     margin: 10px 0px;
 }
 
+@media only screen and (max-width: 576px) {
+
+    footer > .list-container {
+
+        width: 80%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: none;
+        margin-left: 25vw;
+    }
+
+    .list-container > ul, .list-container > div {
+
+        margin: 20px 0px;
+    }
+}
+
+
 footer > .list-container > ul > li:first-child {
 
     margin-top: 0px;

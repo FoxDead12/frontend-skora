@@ -34,5 +34,24 @@ export const Portugues: ILanguage = {
             application: "Aplicação",
             description: "Descrição e detalhes do item para maquete e especificações técnicas",
         }
+    },
+    footer: {
+
+        meetUs: {
+            title: "Conheça-nos",
+            instaPersonal: "Instagram Pessoal",
+            instaShop: "Instagram Loja",
+            linkePersonal: "LinkeDin Pessoal",
+            etsyStore: "Loja Etsy"
+        },
+        contactUs: {
+            title: "Contact-nos",
+        },
+        madeBy: {
+            title: "Desenvolvido Por",
+            gitHubDev: "Programador GitHub",
+            likeDev: "Programador LinkeDin"
+        },
+
     }
 }

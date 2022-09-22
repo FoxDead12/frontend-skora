@@ -57,9 +57,9 @@ function App() {
   return (
     <div className='App'>
       <Header onCheckedChanged={changeLanguage} defaultChecked={LanguageBol[languageName]} />    
-      <Home openForm={openForm} language={language || {} as ILanguage}/>
-      <About language={language || {} as  ILanguage}/>
-      <Footer />
+      <Home   openForm={openForm} language={language || {} as ILanguage}/>
+      <About  language={language || {} as ILanguage}/>
+      <Footer language={language || {} as ILanguage} />
 
 
       <AnimatePresence>

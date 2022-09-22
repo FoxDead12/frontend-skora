@@ -34,6 +34,25 @@ export const English: ILanguage = {
             application: "Application",
             description: "Description and details of the item for mockup and technical specifications",
         }
+    },
+    footer: {
+
+        meetUs: {
+            title: "Meet Us",
+            instaPersonal: "Personal Instagram",
+            instaShop: "Shop Instagram",
+            linkePersonal: "Personal LinkeDin",
+            etsyStore: "Etsy Store"
+        },
+        contactUs: {
+            title: "Contact Us",
+        },
+        madeBy: {
+            title: "Made By",
+            gitHubDev: "Developer GitHub",
+            likeDev: "Developer LinkeDin"
+        },
+
     }
     
 }

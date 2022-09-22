@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import React from "react";
 import "../../css/components/common/Footer.css"
+import { ILanguage } from "../../languages";
 
-export default function Footer() {
+interface IFooter {
+
+    language: ILanguage;
+}
+
+export default function Footer(props: IFooter) {
 
     return(
 
@@ -11,26 +17,26 @@ export default function Footer() {
             <motion.div initial={{opacity: 0}} whileInView={{opacity: 2, transition: {duration: 1}}} viewport={{once: true}} className="list-container">
 
                 <div>
-                    <img src="/logoSkora.png" width={80} height={80} />
+                    <motion.img initial={{scale: 0}} whileInView={{scale: 1, transition: {delay: 0.8}}} viewport={{once: true}} src="/logoSkora.png" width={80} height={80} />
                 </div>
 
                 <ul>
-                    <li>Meet Us</li>
-                    <li><a href="https://www.instagram.com/adriano_skora/" target={"_blank"}>Personal Instagram</a></li>
-                    <li><a href="https://www.instagram.com/skora3d_prints/" target={"_blank"}>Shop Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/adriano-skora-812b55226/" target={"_blank"}>Personal Linkedin</a></li>
-                    <li><a href="https://www.etsy.com/shop/Skora3D" target={"_blank"}>Etsy Store</a></li>
+                    <li>{props.language?.footer?.meetUs.title}</li>
+                    <li><a href="https://www.instagram.com/adriano_skora/" target={"_blank"}>{props.language?.footer?.meetUs.instaPersonal}</a></li>
+                    <li><a href="https://www.instagram.com/skora3d_prints/" target={"_blank"}>{props.language?.footer?.meetUs.instaShop}</a></li>
+                    <li><a href="https://www.linkedin.com/in/adriano-skora-812b55226/" target={"_blank"}>{props.language?.footer?.meetUs.linkePersonal}</a></li>
+                    <li><a href="https://www.etsy.com/shop/Skora3D" target={"_blank"}>{props.language?.footer?.meetUs.etsyStore}</a></li>
                 </ul>
 
                 <ul>
-                    <li>Contact Us</li>
+                    <li>{props.language?.footer?.contactUs.title}</li>
                     <li><a href="mailto:skora.work@hotmail.com"><img src="/email.png" width={200} /></a></li>
                 </ul>
 
                 <ul>
-                    <li>Made By</li>
-                    <li><a href="https://github.com/FoxDead12" target={"_blank"}>Developer GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/david-xavier-81b25421a/" target={"_blank"}>Developer Linkedin</a></li>
+                    <li>{props.language?.footer?.madeBy.title}</li>
+                    <li><a href="https://github.com/FoxDead12" target={"_blank"}>{props.language?.footer?.madeBy.gitHubDev}</a></li>
+                    <li><a href="https://www.linkedin.com/in/david-xavier-81b25421a/" target={"_blank"}>{props.language?.footer?.madeBy.likeDev}</a></li>
                 </ul>
 
 
