@@ -1,5 +1,6 @@
 .container2 {
 
+    position: relative;
     width: 100%;
     padding: 1rem;
     position: fixed;
@@ -113,4 +114,9 @@ transform: rotate(-45deg) translate(-9px, 6px);
 .bar3.active {
 -webkit-transform: rotate(45deg) translate(-8px, -8px);
 transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.logo {
+
+    margin-right: 20px;
 }

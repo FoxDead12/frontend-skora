@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react"
 import Instagram from "../../assets/images/instagram.png";
 import Linkdin from "../../assets/images/linkdin.png"
@@ -26,11 +27,23 @@ export default function Header(props: IHeader) {
     }
 
     return(
-        <header className={"container2"}>
+        <motion.header 
+        initial={{y: -100, opacity: 0}}
+        animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+                delay: 1.5,
+                duration: 0.5
+
+            }
+        }}
+        className={"container2"}
+        >
 
             <div className={"lefContainer"}>
 
-                <img src={"/logoSkora.png"} width={40} height={40} style={{marginRight: 10}} />
+                <motion.img className="logo" src={"/logoSkora.png"} width={35} height={35}/>
                 <CheckBox defaultChecked={props.defaultChecked} onCheckedChanged={onCheckedChanged}/>
             </div>
             
@@ -42,15 +55,35 @@ export default function Header(props: IHeader) {
 
 
             <div className={menu == true ? "rightContainer" + " " + "active" : "rightContainer"}>
-                <a href="https://www.google.com/" target={"_blank"} rel={"noreferrer"}>
-                    <img src={Linkdin} width={40} height={40} />
+                <a href="https://www.linkedin.com/in/adriano-skora-812b55226/" target={"_blank"} rel={"noreferrer"}>
+                    <motion.img 
+                        initial={{scale: 0, rotateZ: 90}} 
+                        animate={{
+                            scale: 1,
+                            rotateZ: 0,
+                            transition: {
+                                delay: 2,
+                
+                            }
+                        }} 
+                        src={Linkdin} width={35} height={35} />
                 </a>
 
-                <a href="https://www.google.com/" target={"_blank"} rel={"noreferrer"}>
-                    <img src={Instagram} width={40} height={40} />
+                <a href="https://www.instagram.com/skora3d_prints/" target={"_blank"} rel={"noreferrer"}>
+                    <motion.img
+                        initial={{scale: 0, rotateZ: -90}} 
+                        animate={{
+                            scale: 1,
+                            rotateZ: 0,
+                            transition: {
+                                delay: 2,
+                
+                            }
+                        }} 
+                        src={Instagram} width={35} height={35} />
                 </a>
             </div>
 
-        </header>
+        </motion.header>
     )
 }

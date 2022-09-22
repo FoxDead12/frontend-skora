@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useRef, useState } from "react"
 import "../../css/components/utils/ContactForm.css"
 // import axios from 'axios'
@@ -119,7 +120,16 @@ export default function ContactForm(props: IContactForm) {
             
             <h5 style={{padding: 0, textAlign: 'center', fontSize: 24, margin: 0, color: 'lightgreen', position: 'absolute', }}>{mensgem}</h5>
 
-            <form style={{scale: opacit, transitionDuration: ".3s" }} className={"form" + " shadow"}>
+            <motion.form
+            initial={{y: -1000}}
+            animate={{y: 0,
+            transition: {
+               duration: 0.1
+            }}}
+            exit={{y: 2000, transition: {
+                duration: 0.2
+            }}}
+            style={{scale: opacit, transitionDuration: ".3s" }} className={"form" + " shadow"}>
                 
                 <h1>{props.language?.form.title}</h1>
                 <p>{props.language?.form.description}</p>
@@ -190,7 +200,7 @@ export default function ContactForm(props: IContactForm) {
                     <label> {fetching == true ? '' : props.language?.form.showcase}</label>
                 </div>
 
-            </form>
+            </motion.form>
 
         </div>
     )

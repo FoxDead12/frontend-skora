@@ -1,6 +1,8 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import About from './components/common/About';
+import Footer from './components/common/Footer';
 import Header from './components/common/Header';
 import Home from './components/common/Home';
 import ContactForm from './components/utils/ContactForm';
@@ -57,8 +59,12 @@ function App() {
       <Header onCheckedChanged={changeLanguage} defaultChecked={LanguageBol[languageName]} />    
       <Home openForm={openForm} language={language || {} as ILanguage}/>
       <About language={language || {} as  ILanguage}/>
+      <Footer />
 
-      {form == true ? <ContactForm language={language || {} as ILanguage} onCLoseForm={closeForm}/> : ''}
+
+      <AnimatePresence>
+        {form == true ? <ContactForm language={language || {} as ILanguage} onCLoseForm={closeForm}/> : ''}
+      </AnimatePresence>
     </div>
   );
 }

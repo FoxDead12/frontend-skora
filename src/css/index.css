@@ -20,8 +20,9 @@ body {
   font-family: inherit;
   line-height: inherit;
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -36,6 +37,8 @@ pre {
   border-width: 0;
   border-style: solid;
   border-color: currentColor;
+
+  outline-color: var(--collor-2);
 }
 h1,
 h2 {
