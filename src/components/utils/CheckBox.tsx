@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react"
 import "../../css/components/utils/CheckBox.css"
 
@@ -9,18 +10,22 @@ interface CheckBox {
 }
 
 
-export default function CheckBox(props: CheckBox) {
+export default function LanguageCheckBox(props: CheckBox) {
 
     return(
 
-        <div>
-            <div className={"switch_box"}>
-                <div className={"input_wrapper"}>
-                    <input type="checkbox" className={"switch_4"} onClick={(e) => {props.onCheckedChanged(e.currentTarget.checked)}} defaultChecked={props.defaultChecked} />
-                    <h5 className={"is_checked"}>PT</h5>
-                    <h5 className={"is_unchecked"}>EN</h5>
-                </div>
+        <motion.div
+        initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0, transition: {delay: 1}}}>
+            <div className={"language-container"}>
+                <input type="checkbox" 
+                    className={"swicth"} 
+                    onClick={(e) => {props.onCheckedChanged(e.currentTarget.checked)}} 
+                    defaultChecked={props.defaultChecked} />
+
+
+                <h5 className={"is_checked"}>PT</h5>
+                <h5 className={"is_unchecked"}>EN</h5>
             </div>
-        </div>
+        </motion.div>
     )
 }

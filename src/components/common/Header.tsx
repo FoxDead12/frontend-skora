@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react"
-import Instagram from "../../assets/svgs/insta.svg";
-import Linkdin from "../../assets/svgs/linke.svg"
+import Instagram from "../../assets/svgs/instagram.svg";
+import Linkdin from "../../assets/svgs/linkedin.svg";
+import Etsy from "../../assets/svgs/etsy.svg";
+import HeaderBack from "../../assets/images/header.png";
 import "../../css/components/common/Header.css";
-import CheckBox from "../utils/CheckBox";
+import LanguageCheckBox from "../utils/CheckBox";
 
 interface IHeader {
 
@@ -27,79 +29,23 @@ export default function Header(props: IHeader) {
     }
 
     return(
-        <motion.header 
-        initial={{y: -100, opacity: 0}}
-        animate={{
-            y: 0,
-            opacity: 1,
-            transition: {
-                delay: 1.5,
-                duration: 0.5
+        <header>
+            {/* <img className="img-header" src={HeaderBack} /> */}
+            <div className="header-container">
+                <div className="column">
+                    <motion.img initial={{scale: 0,}} animate={{scale: 1, transition: {delay: 1}}} src={"/logoSkora.png"} width={40} height={40} style={{marginRight: 10}} />
+                    <LanguageCheckBox defaultChecked={props.defaultChecked} onCheckedChanged={onCheckedChanged}/>                    
+                </div>
 
-            }
-        }}
-        className={"container2"}
-        >
 
-            <div className={"lefContainer"}>
-
-                <motion.img className="logo" src={"/logoSkora.png"} width={35} height={35}/>
-                <CheckBox defaultChecked={props.defaultChecked} onCheckedChanged={onCheckedChanged}/>
+                <div className="column">
+                    {/* Colocar todos os ICONS DE LINKS */}
+                    <motion.a initial={{rotate: 180, opacity: 0}} animate={{rotate: 0, opacity: 1, transition: {delay: 1}}} whileHover={{rotateZ: [0, 20, -20, 0], transition: {repeat: Infinity, ease: "linear"}}} href="https://www.linkedin.com/in/adriano-skora-812b55226/" target={"_blank"}><img src={Linkdin} /></motion.a>
+                    <motion.a initial={{scale: 0, opacity: 1 }} animate={{scale: 1, opacity: 1, transition: {delay: 1}}} whileHover={{rotateZ: [0, 20, -20, 0], transition: {repeat: Infinity, ease: "linear"}}} href="https://www.instagram.com/skora3d_prints/" target={"_blank"}><img src={Instagram} /></motion.a>
+                    <motion.a initial={{x: 100, opacity: 1 }} animate={{x: 0, opacity: 1, transition: {delay: 1}}} whileHover={{rotateZ: [0, 20, -20, 0], transition: {repeat: Infinity, ease: "linear"}}} href="https://www.etsy.com/shop/Skora3D" target={"_blank"}><img src={Etsy} /></motion.a>
+                    
+                </div>
             </div>
-            
-            <div className={"hamburger"} onClick={() => { menu == true ? setMenu(false): setMenu(true)}}>
-                <div className={menu == true ? "bar1" + " " + "active" : "bar1"}></div>
-                <div className={menu == true ? "bar2" + " " + "active" : "bar2"}></div>
-                <div className={menu == true ? "bar3" + " " + "active" : "bar3"}></div>
-            </div>
-
-
-            <div className={menu == true ? "rightContainer" + " " + "active" : "rightContainer"}>
-                <a href="https://www.linkedin.com/in/adriano-skora-812b55226/" target={"_blank"} rel={"noreferrer"}>
-                    <motion.img 
-                        initial={{scale: 0, rotateZ: 90}} 
-                        animate={{
-                            scale: 1,
-                            rotateZ: 0,
-                            transition: {
-                                delay: 2,
-                
-                            }
-                        }} 
-                        src={Linkdin} width={40} height={40} />
-                </a>
-
-                <a href="https://www.instagram.com/skora3d_prints/" target={"_blank"} rel={"noreferrer"}>
-                    <motion.img
-                        initial={{scale: 0, rotateZ: -90}} 
-                        animate={{
-                            scale: 1,
-                            rotateZ: 0,
-                            transition: {
-                                delay: 2,
-                
-                            }
-                        }} 
-                        src={Instagram} width={40} height={40} />
-                </a>
-
-                <a href="https://www.instagram.com/skora3d_prints/" target={"_blank"} rel={"noreferrer"}>
-                    <motion.img
-                        initial={{scale: 0, rotateZ: -90}} 
-                        animate={{
-                            scale: 1,
-                            rotateZ: 0,
-                            transition: {
-                                delay: 2,
-                
-                            }
-                        }} 
-                        src={Instagram} width={40} height={40} />
-                </a>
-
-                
-            </div>
-
-        </motion.header>
+        </header>
     )
 }
